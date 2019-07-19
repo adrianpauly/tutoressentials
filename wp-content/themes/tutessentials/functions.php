@@ -75,10 +75,6 @@ function authorize($auth_id, $auth_base_url, $redirect_url) {
 
     if ($auth_object = json_decode($auth_result)) {
 
-    echo '<pre style="display:none" class="debug">';
-    var_dump($auth_object);
-    echo '</pre>';
-
         $user = set_user($auth_object);
 
         if($user) {
