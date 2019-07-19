@@ -134,7 +134,7 @@ $te_site_url = get_site_url();
 $course_page_path = '?sfwd-courses=tutor-essentials-course';
 
 // URLs which are ok not to redirect
-$non_redirect_urls = array('wp-admin','wp-login','auth');
+$non_redirect_urls = array('wp-admin','wp-login','auth','wp-json');
 $redirect = true;
 
 foreach($non_redirect_urls as $url) {
@@ -191,6 +191,8 @@ if(!current_user_can('administrator')) {
 
 // Create custom endpoint to retrieve user course progress
 
+define('NEW_TE_API_KEY','171ccbfb1262c305275ba6cb8fb12f8ca4a59b72');
+
 add_action('rest_api_init', 'add_user_progress_api');
 
 function add_user_progress_api() {
@@ -204,6 +206,10 @@ function get_user_progress($data) {
 
     $email = urldecode($data['user_email']);
     $user = get_user_by( 'email', $email );
+
+    if( empty($_SERVER['API_KEY']) || $_SERVER('API_KEY') !== 'NEW_TE_API_KEY' ) {
+        return $error = new WP_Error('api_key_error', 'Invalid API key or no key sent');
+    }
 
     $course_id = 6; // Tutor Essentials course ID, the only one on the site
     $course_progress = get_user_meta( $user->ID, '_sfwd-course_progress', true );
