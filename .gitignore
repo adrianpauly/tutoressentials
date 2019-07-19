@@ -52,6 +52,7 @@ Thumbs.db
 *.sublime-project
 *.sublime-workspace
 *.komodoproject
+sftp-config.json
 
 # ignore log files and databases
 *.log
