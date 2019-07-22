@@ -207,46 +207,48 @@ function get_user_progress($data) {
     $email = urldecode($data['user_email']);
     $user = get_user_by( 'email', $email );
 
-    if( empty($_SERVER['API_KEY']) || $_SERVER('API_KEY') !== 'NEW_TE_API_KEY' ) {
-        return $error = new WP_Error('api_key_error', 'Invalid API key or no key sent');
-    }
-
-    $course_id = 6; // Tutor Essentials course ID, the only one on the site
-    $course_progress = get_user_meta( $user->ID, '_sfwd-course_progress', true );
-
-
-    // Lifted from ld-course-progress.php
-
-    $percentage = 0;
-
-    if ( ( ! empty( $course_progress ) ) && ( isset( $course_progress[ $course_id ] ) ) && ( ! empty( $course_progress[ $course_id ] ) ) ) {
-        if ( isset( $course_progress[ $course_id ]['completed'] ) ) {
-            $completed = absint( $course_progress[ $course_id ]['completed'] );
-        }
-
-        if ( isset( $course_progress[ $course_id ]['total'] ) ) {
-            $total = absint( $course_progress[ $course_id ]['total'] );
-        }
+    if( empty($_SERVER['HTTP_API_KEY']) ) {
+        return $error = new WP_Error('no_api_key', 'No API key sent');
+    } else if($_SERVER['HTTP_API_KEY'] !== NEW_TE_API_KEY ) {
+        return $error = new WP_Error('api_key_error', 'Invalid API key');
     } else {
-        $total = 0;
-    }
 
-    // If $total is still false we calculate the total from course steps.
-    if ( false === $total ) {
-        $total = learndash_get_course_steps_count( $course_id );
-    }
+        $course_id = 6; // Tutor Essentials course ID, the only one on the site
+        $course_progress = get_user_meta( $user->ID, '_sfwd-course_progress', true );
 
-    if ( $total > 0 ) {
-        $percentage = intval( $completed * 100 / $total );
-        $percentage = ( $percentage > 100 ) ? 100 : $percentage;
-    } else {
+
+        // Lifted from ld-course-progress.php
+
         $percentage = 0;
+
+        if ( ( ! empty( $course_progress ) ) && ( isset( $course_progress[ $course_id ] ) ) && ( ! empty( $course_progress[ $course_id ] ) ) ) {
+            if ( isset( $course_progress[ $course_id ]['completed'] ) ) {
+                $completed = absint( $course_progress[ $course_id ]['completed'] );
+            }
+
+            if ( isset( $course_progress[ $course_id ]['total'] ) ) {
+                $total = absint( $course_progress[ $course_id ]['total'] );
+            }
+        } else {
+            $total = 0;
+        }
+
+        // If $total is still false we calculate the total from course steps.
+        if ( false === $total ) {
+            $total = learndash_get_course_steps_count( $course_id );
+        }
+
+        if ( $total > 0 ) {
+            $percentage = intval( $completed * 100 / $total );
+            $percentage = ( $percentage > 100 ) ? 100 : $percentage;
+        } else {
+            $percentage = 0;
+        }
+
+        return array(
+            'percentage' => isset( $percentage ) ? $percentage : 0,
+            'completed'  => isset( $completed ) ? $completed : 0,
+            'total'      => isset( $total ) ? $total : 0,
+        );        
     }
-
-    return array(
-        'percentage' => isset( $percentage ) ? $percentage : 0,
-        'completed'  => isset( $completed ) ? $completed : 0,
-        'total'      => isset( $total ) ? $total : 0,
-    );
-
 }
