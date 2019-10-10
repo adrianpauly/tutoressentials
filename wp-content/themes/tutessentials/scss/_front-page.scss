@@ -40,6 +40,10 @@ p, li {
     }
   }
 
+  .menu-icon {
+    display: none;
+  }
+
 }
 
 .tutor-essentials {
@@ -75,6 +79,9 @@ p, li {
         text-decoration: underline !important;
       }
     }
+    .masthead-content {
+      margin-top: 50px !important;
+    }
     .buttons {
       display: flex;
       align-items: flex-start;
@@ -92,6 +99,7 @@ p, li {
       font-size: 1.35rem !important;
       opacity: 0.8;
       font-weight: 300;
+      text-align: center;
     }
     @media screen and (min-width:768px) {
       height: 80vh;
@@ -99,8 +107,10 @@ p, li {
         font-size: 5rem !important;
       }
       .masthead-content {
-        margin-top: 50px !important;
         width: 60%;
+      }
+      .button-subtext {
+        text-align: left;
       }
     }
   }

@@ -22,6 +22,9 @@ p, li {
     margin: 0;
     color: #fefefe; }
 
+.home .menu-icon {
+  display: none; }
+
 .tutor-essentials h2 {
   text-align: center;
   margin: 20px 0 40px;
@@ -51,6 +54,8 @@ p, li {
     opacity: 0.9; }
     .tutor-essentials .masthead p a {
       text-decoration: underline !important; }
+  .tutor-essentials .masthead .masthead-content {
+    margin-top: 50px !important; }
   .tutor-essentials .masthead .buttons {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -68,15 +73,17 @@ p, li {
     margin-top: 10px;
     font-size: 1.35rem !important;
     opacity: 0.8;
-    font-weight: 300; }
+    font-weight: 300;
+    text-align: center; }
   @media screen and (min-width: 768px) {
     .tutor-essentials .masthead {
       height: 80vh; }
       .tutor-essentials .masthead h1 {
         font-size: 5rem !important; }
       .tutor-essentials .masthead .masthead-content {
-        margin-top: 50px !important;
-        width: 60%; } }
+        width: 60%; }
+      .tutor-essentials .masthead .button-subtext {
+        text-align: left; } }
 
 .tutor-essentials .description {
   background-color: white; }
