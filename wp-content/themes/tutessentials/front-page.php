@@ -16,7 +16,7 @@ get_header(); ?>
 	            <h1>Easily train all your tutors in a self-paced, online environment.</h1>
 	            <p>Tutor Essentials is the only web-based tutor training course endorsed by <a href="https://www.crla.net/" target="_blank">CRLA</a> (College Reading and Learning Association).</p>
 	            <div class="cta">
-	                <a href="/#/schools-contact/training-demo/" class="btn btn-alt">Give it a try!</a>
+	                <a href="https://tutormatchingservice.com/#/schools-contact/training-demo/" class="btn btn-alt">Give it a try!</a>
 	                <h5 class="button-subtext">No credit card, no obligations</h5>
 	            </div>
 	        </div>    		
@@ -120,7 +120,7 @@ get_header(); ?>
               </div>
               <div class="cta">
                 <p>Want to learn more about this course?</p>
-                <p><a href="#/schools-contact/training-demo/" class="btn btn-primary">Request a Free Demo</a></p>   
+                <p><a href="https://tutormatchingservice.com/#/schools-contact/training-demo/" class="btn btn-primary">Request a Free Demo</a></p>   
               </div>
             </div>
         </div>
