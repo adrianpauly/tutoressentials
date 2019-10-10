@@ -137,8 +137,12 @@ $course_page_path = '?sfwd-courses=tutor-essentials-course';
 $non_redirect_urls = array('wp-admin','wp-login','auth','wp-json');
 $redirect = true;
 
-foreach($non_redirect_urls as $url) {
-	if (strpos($path, $url)) $redirect = false;	
+if(is_front_page()) {
+    $redirect = false;
+} else {
+    foreach($non_redirect_urls as $url) {
+    	if (strpos($path, $url)) $redirect = false;	
+    }
 }
 
 //if(is_user_logged_in()) echo '<p style="position:absolute; bottom: 30px">User logged in</p>';
