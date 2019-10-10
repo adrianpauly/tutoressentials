@@ -1,0 +1,496 @@
+h1, h2, h3, h4, h5 {
+  font-family: "Montserrat", sans-serif !important; }
+
+p, li {
+  font-family: "Nunito Sans", sans-serif !important; }
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1300px; } }
+
+.tutor-essentials h2 {
+  text-align: center;
+  margin: 20px 0 40px;
+  font-weight: 600; }
+
+.tutor-essentials section {
+  padding-top: 50px;
+  padding-bottom: 50px; }
+
+.tutor-essentials .masthead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-height: auto !important;
+  background-image: url(../img/masthead-front.jpg);
+  height: 80vh; }
+  .tutor-essentials .masthead h1, .tutor-essentials .masthead h5, .tutor-essentials .masthead p, .tutor-essentials .masthead a {
+    color: #fefefe; }
+  .tutor-essentials .masthead h1 {
+    margin-top: 0;
+    font-weight: 700; }
+  .tutor-essentials .masthead p {
+    font-size: 1.9rem;
+    opacity: 0.9; }
+    .tutor-essentials .masthead p a {
+      text-decoration: underline !important; }
+  .tutor-essentials .masthead .button-subtext {
+    letter-spacing: 0;
+    margin-top: 0;
+    font-size: 1.35rem !important;
+    opacity: 0.8;
+    font-weight: 300; }
+  @media screen and (min-width: 768px) {
+    .tutor-essentials .masthead h1 {
+      font-size: 5rem !important; }
+    .tutor-essentials .masthead .masthead-content {
+      margin-top: 50px !important;
+      width: 60%; } }
+
+.tutor-essentials .description {
+  background-color: white; }
+  .tutor-essentials .description p {
+    font-weight: 400;
+    line-height: 1.8;
+    opacity: 0.8; }
+  .tutor-essentials .description .btn {
+    margin-top: 40px; }
+  @media screen and (min-width: 768px) {
+    .tutor-essentials .description {
+      padding: 60px 0; }
+      .tutor-essentials .description p {
+        font-size: 1.9rem; } }
+
+.tutor-essentials .btn {
+  font-size: 1.6rem;
+  margin: 50px 0 10px;
+  -webkit-transition: 0.2s all;
+  -o-transition: 0.2s all;
+  transition: 0.2s all;
+  text-transform: uppercase;
+  border: none;
+  padding: 15px 30px; }
+  .tutor-essentials .btn:hover {
+    background-color: #08b4e6;
+    border: none; }
+
+.tutor-essentials #universities {
+  padding: 50px 0;
+  border-bottom: 1px solid #ccc; }
+
+.tutor-essentials .school-logos {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+  .tutor-essentials .school-logos img {
+    margin: 0 30px;
+    width: 100%;
+    max-width: 250px;
+    opacity: 0.4; }
+    .tutor-essentials .school-logos img:hover {
+      opacity: 0.5; }
+  .tutor-essentials .school-logos .more {
+    font-weight: 400;
+    opacity: 0.3;
+    line-height: 2.5;
+    font-size: 2rem; }
+  .tutor-essentials .school-logos h2 {
+    margin: 0 0 80px; }
+  .tutor-essentials .school-logos #universities {
+    border: none; }
+  .tutor-essentials .school-logos .block-grid-item {
+    padding: 25px; }
+
+.tutor-essentials .more {
+  text-align: center;
+  font-weight: 400; }
+
+.tutor-essentials .features-container {
+  position: relative; }
+  .tutor-essentials .features-container .feature {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top; }
+    .tutor-essentials .features-container .feature img {
+      max-width: 60%; }
+    @media screen and (min-width: 768px) {
+      .tutor-essentials .features-container .feature {
+        max-width: 49%; }
+        .tutor-essentials .features-container .feature img {
+          max-width: 90%; } }
+    @media screen and (min-width: 1200px) {
+      .tutor-essentials .features-container .feature {
+        width: 295px;
+        margin-left: -91px; }
+        .tutor-essentials .features-container .feature:last-child {
+          margin-left: -91px; }
+        .tutor-essentials .features-container .feature:first-child {
+          margin-left: 0; }
+        .tutor-essentials .features-container .feature:nth-child(2n) {
+          margin-top: 115px; } }
+    .tutor-essentials .features-container .feature .button {
+      -webkit-transition: -webkit-transform 0.3s;
+      transition: -webkit-transform 0.3s;
+      -o-transition: transform 0.3s;
+      transition: transform 0.3s;
+      transition: transform 0.3s, -webkit-transform 0.3s;
+      cursor: pointer;
+      position: relative;
+      background-color: transparent;
+      border: none;
+      padding: 0; }
+      .tutor-essentials .features-container .feature .button::before {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 70px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 70px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        z-index: -1;
+        width: 50%;
+        height: 98%;
+        top: 1%;
+        left: 25%; }
+        @media screen and (min-width: 1200px) {
+          .tutor-essentials .features-container .feature .button::before {
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: 32px; } }
+      .tutor-essentials .features-container .feature .button:hover, .tutor-essentials .features-container .feature .button:focus {
+        z-index: 10;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1); }
+        .tutor-essentials .features-container .feature .button:hover::before, .tutor-essentials .features-container .feature .button:focus::before {
+          opacity: 1; }
+        .tutor-essentials .features-container .feature .button:hover + .feature-tooltip, .tutor-essentials .features-container .feature .button:focus + .feature-tooltip {
+          display: inline-block; }
+    .tutor-essentials .features-container .feature img {
+      position: relative;
+      -webkit-filter: hue-rotate(195deg);
+      filter: hue-rotate(195deg); }
+    .tutor-essentials .features-container .feature .feature-tooltip {
+      display: none;
+      padding: 30px;
+      border-radius: 5px;
+      white-space: normal;
+      z-index: 30;
+      max-width: 70%;
+      left: 15%;
+      top: 10%;
+      -webkit-transition: opacity 0.2s;
+      -o-transition: opacity 0.2s;
+      transition: opacity 0.2s;
+      position: absolute;
+      opacity: 0.95;
+      text-align: left; }
+      @media screen and (min-width: 1200px) {
+        .tutor-essentials .features-container .feature .feature-tooltip {
+          min-width: 320px;
+          max-width: 350px; } }
+      .tutor-essentials .features-container .feature .feature-tooltip h3 {
+        font-size: 2rem;
+        width: auto;
+        max-width: initial;
+        text-transform: none;
+        color: #fefefe;
+        margin: 0 0 15px;
+        text-align: left; }
+      .tutor-essentials .features-container .feature .feature-tooltip h4 {
+        color: #666;
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin-top: 0; }
+      .tutor-essentials .features-container .feature .feature-tooltip p {
+        font-size: 1.5rem;
+        color: #666;
+        text-align: left;
+        margin-bottom: 0; }
+      @media screen and (min-width: 1200px) {
+        .tutor-essentials .features-container .feature .feature-tooltip::before {
+          content: "";
+          width: 20px;
+          height: 20px;
+          border-style: solid;
+          border-width: 10px;
+          top: 80px;
+          position: absolute; } }
+      @media screen and (min-width: 1200px) {
+        .tutor-essentials .features-container .feature .feature-tooltip.left {
+          left: -104%; } }
+      .tutor-essentials .features-container .feature .feature-tooltip.left::before {
+        border-color: transparent transparent transparent #ccc;
+        right: -20px; }
+      @media screen and (min-width: 1200px) {
+        .tutor-essentials .features-container .feature .feature-tooltip.right {
+          left: 83%; } }
+      .tutor-essentials .features-container .feature .feature-tooltip.right:before {
+        border-color: transparent #ccc transparent transparent;
+        left: -20px; }
+      .tutor-essentials .features-container .feature .feature-tooltip.tooltip-offset {
+        margin-top: 80px; }
+
+.tutor-essentials .feature {
+  padding-top: 70px;
+  padding-bottom: 100px; }
+  .tutor-essentials .feature h2 {
+    text-align: center;
+    margin-bottom: 40px; }
+  .tutor-essentials .feature h3 {
+    font-weight: 600;
+    text-align: center;
+    margin: 10px auto;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    max-width: 130px;
+    white-space: normal; }
+  .tutor-essentials .feature p {
+    text-align: center;
+    margin-bottom: 60px; }
+  .tutor-essentials .feature .button {
+    cursor: default; }
+    .tutor-essentials .feature .button:hover {
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none; }
+  @media screen and (min-width: 768px) {
+    .tutor-essentials .feature {
+      padding-top: 60px; } }
+
+.tutor-essentials .stats {
+  padding: 50px 0;
+  background-color: #fefefe; }
+  .tutor-essentials .stats .stat-block {
+    text-align: center;
+    margin: 7% 0 15%; }
+  .tutor-essentials .stats h2 {
+    font-size: 4rem;
+    color: #07a1cd;
+    font-weight: 700;
+    margin-bottom: 0; }
+  .tutor-essentials .stats h3 {
+    text-transform: uppercase;
+    margin-top: 0;
+    font-size: 2.4rem; }
+  .tutor-essentials .stats h5 {
+    font-size: 1.8rem;
+    letter-spacing: 0.05rem;
+    opacity: 0.7;
+    font-weight: 400; }
+  @media screen and (min-width: 768px) {
+    .tutor-essentials .stats {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .tutor-essentials .stats .stat-block {
+        margin: 0 5%; }
+      .tutor-essentials .stats h2 {
+        font-size: 6.3rem; } }
+
+.tutor-essentials .pricing {
+  background-color: #fefefe;
+  padding: 50px 0; }
+  .tutor-essentials .pricing .price-options {
+    margin: 30px auto 50px;
+    text-align: center; }
+    .tutor-essentials .pricing .price-options .col {
+      border: 1px solid #ccc;
+      margin: 10px;
+      padding: 20px 0; }
+    .tutor-essentials .pricing .price-options h5 {
+      text-transform: uppercase;
+      margin-bottom: 0;
+      opacity: 0.9; }
+    .tutor-essentials .pricing .price-options h4 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 700; }
+    .tutor-essentials .pricing .price-options p {
+      font-size: 1.5rem; }
+    .tutor-essentials .pricing .price-options h3 {
+      color: #07a1cd;
+      font-weight: 400; }
+      .tutor-essentials .pricing .price-options h3 .amount {
+        font-size: 2.3rem; }
+      .tutor-essentials .pricing .price-options h3 .per-year {
+        font-size: 1.4rem;
+        margin-left: 5px; }
+    .tutor-essentials .pricing .price-options .individual h4 {
+      font-size: 1.8rem;
+      margin: 30px auto 50px; }
+  .tutor-essentials .pricing .cta {
+    text-align: center; }
+    .tutor-essentials .pricing .cta p {
+      font-size: 2rem; }
+    .tutor-essentials .pricing .cta .btn {
+      font-size: 1.4rem; }
+
+.tutor-essentials .why-use {
+  padding: 30px 0; }
+  .tutor-essentials .why-use h2 {
+    text-align: left;
+    margin-top: 50px; }
+  .tutor-essentials .why-use ul {
+    padding-left: 0; }
+  .tutor-essentials .why-use li {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: 300; }
+  .tutor-essentials .why-use p {
+    margin-bottom: 40px !important; }
+  .tutor-essentials .why-use .img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: url(/client/img/library.jpg);
+    background-size: cover;
+    background-position: center center; }
+  .tutor-essentials .why-use .badge {
+    margin-top: 10px;
+    background-color: #fefefe;
+    padding: 0;
+    border-radius: 0; }
+
+.tutor-essentials #testimonials {
+  background-image: url(../img/masthead-front.jpg);
+  background-size: cover;
+  text-align: center;
+  padding: 60px 0; }
+  .tutor-essentials #testimonials .testimonials {
+    margin: 50px 0; }
+  .tutor-essentials #testimonials h2, .tutor-essentials #testimonials blockquote, .tutor-essentials #testimonials cite {
+    color: #fff; }
+  .tutor-essentials #testimonials blockquote {
+    padding: 10px 40px;
+    margin-bottom: 10px;
+    border: 0;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.8rem; }
+  .tutor-essentials #testimonials cite {
+    display: block;
+    font-style: normal;
+    text-align: center; }
+  .tutor-essentials #testimonials .row > div {
+    padding: 0 20px !important; }
+  .tutor-essentials #testimonials .author {
+    font-weight: 600;
+    font-size: 1.9rem; }
+  .tutor-essentials #testimonials .position {
+    font-weight: 400;
+    font-size: 1.4rem;
+    opacity: 0.8;
+    margin-bottom: 15px;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase; }
+  .tutor-essentials #testimonials .logo {
+    max-width: 110px;
+    max-height: 30px;
+    margin: 0 auto; }
+  .tutor-essentials #testimonials .testimonials-container {
+    margin: 50px 0 40px;
+    background-size: 45px; }
+  .tutor-essentials #testimonials .carousel-inner {
+    min-height: 320px; }
+    .tutor-essentials #testimonials .carousel-inner ul[rn-carousel] {
+      height: 320px; }
+  .tutor-essentials #testimonials footer {
+    padding-top: 20px;
+    position: relative; }
+    .tutor-essentials #testimonials footer::before {
+      content: '';
+      width: 50px;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -25px;
+      opacity: 0.5; }
+  @media screen and (min-width: 768px) {
+    .tutor-essentials #testimonials blockquote {
+      font-size: 2.2rem; } }
+  .tutor-essentials #testimonials .carousel-indicators {
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+    bottom: -10px; }
+    .tutor-essentials #testimonials .carousel-indicators li {
+      display: inline-block;
+      list-style-type: none;
+      width: 60px;
+      height: 60px;
+      padding-top: 4px;
+      cursor: pointer;
+      border-radius: 50%;
+      text-indent: 0;
+      border: none; }
+      .tutor-essentials #testimonials .carousel-indicators li img {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; }
+      .tutor-essentials #testimonials .carousel-indicators li.active {
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        background-color: transparent; }
+        .tutor-essentials #testimonials .carousel-indicators li.active img {
+          -webkit-filter: grayscale(0);
+          filter: grayscale(0); }
+    @media screen and (min-width: 768px) {
+      .tutor-essentials #testimonials .carousel-indicators {
+        width: 60%;
+        left: 50%;
+        margin-left: -30%; }
+        .tutor-essentials #testimonials .carousel-indicators li {
+          width: 80px;
+          height: 80px; }
+          .tutor-essentials #testimonials .carousel-indicators li + li {
+            margin-left: 10px; }
+          .tutor-essentials #testimonials .carousel-indicators li img {
+            width: 70px;
+            height: 70px; } }
+
+@media screen and (min-width: 768px) {
+  .tutor-essentials .flex-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch; }
+  .tutor-essentials .flex-row .col {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; } }
+
+.navbar-header {
+  width: 100%; }
+  .navbar-header img {
+    max-width: 100%; }
+
+#primary .lp-course3-heading:before {
+  background-color: transparent !important; }
+
+.lp-course3-heading .lp-title {
+  font-size: 42px; }
+
+#footer-middle {
+  display: none; }
+
+#wpProQuiz_2 .wpProQuiz_certificate {
+  display: none !important; }

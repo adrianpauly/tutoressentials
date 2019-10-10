@@ -1,0 +1,575 @@
+
+$primary: #07a1cd;
+$white: #fefefe;
+$gray: #ccc;
+$text: #666;
+
+
+$headings: 'Montserrat', sans-serif;
+$body: 'Nunito Sans', sans-serif;
+
+h1, h2, h3, h4, h5 {
+  font-family: $headings !important;
+}
+
+p, li {
+  font-family: $body !important;
+}
+
+.container {
+  @media (min-width:1440px) {
+      width: 1300px;
+  }
+}
+
+.tutor-essentials {
+
+  h2 {
+    text-align: center;
+    margin: 20px 0 40px;
+    font-weight: 600;
+  }
+  section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .masthead {
+    display: flex;
+    align-items: center;
+    min-height: auto !important;
+    background-image: url(../img/masthead-front.jpg);
+    height: 80vh;
+    h1, h5, p, a {
+      color: $white;
+    }
+    h1 {
+      margin-top: 0;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.9rem;
+      opacity: 0.9;
+      a {
+        text-decoration: underline !important;
+      }
+    }
+    .button-subtext {
+      letter-spacing: 0;
+      margin-top: 0;
+      font-size: 1.35rem !important;
+      opacity: 0.8;
+      font-weight: 300;
+    }
+    @media screen and (min-width:768px) {
+      h1 {
+        font-size: 5rem !important;
+      }
+      .masthead-content {
+        margin-top: 50px !important;
+        width: 60%;
+      }
+    }
+  }
+
+  .description {
+    background-color: white;
+    p {
+      font-weight: 400;
+      line-height: 1.8;
+      opacity: 0.8;
+    }
+    .btn {
+      margin-top: 40px;
+    }
+    @media screen and (min-width:768px) {
+      padding: 60px 0;
+      p {
+        font-size: 1.9rem;
+      }
+    }
+  }
+  .btn {
+    font-size: 1.6rem;
+    margin: 50px 0 10px;
+    transition: 0.2s all;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px 30px;
+    &:hover {
+      background-color: lighten($primary,5%);
+      border: none;
+    }
+  } 
+  #universities {
+    padding: 50px 0;
+    border-bottom: 1px solid $gray;
+  }
+
+  .school-logos {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    box-sizing: border-box;
+    img {
+      margin: 0 30px;
+      width: 100%;
+      max-width: 250px;
+      opacity: 0.4;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    .more {
+      font-weight: 400;
+      opacity: 0.3;
+      line-height: 2.5;
+      font-size: 2rem;
+    }
+    h2 {
+      margin: 0 0 80px; 
+    }
+    #universities {
+      border: none;
+    }
+    .block-grid-item {
+      padding: 25px;
+    }
+  }
+  .more {
+    text-align: center;
+    font-weight: 400;
+  }
+
+  // Tutor training features / Hexagons
+  .features-container {
+    position: relative;
+    .feature {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      img{
+        max-width: 60%;
+      }
+      @media screen and (min-width:768px) {
+        img{
+          max-width: 90%;
+        }
+        max-width: 49%;
+      }
+      @media screen and (min-width:1200px) {
+        width: 295px;
+        margin-left: -91px;
+        &:last-child{
+          margin-left: -91px;
+        }
+        &:first-child{
+          margin-left: 0;
+        }
+        &:nth-child(2n) {
+          margin-top: 115px;
+        }
+      }
+      .button {
+        transition: transform 0.3s;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        &::before {
+          content: '';
+            position: absolute;
+          border-radius: 50%;
+          box-shadow: 0 0 70px rgba(0,0,0, 0.3);
+          opacity: 0;
+          z-index: -1;
+          width: 50%;
+          height: 98%;
+          top: 1%;
+          left: 25%;
+          @media screen and (min-width:1200px) {
+            width: 230px;
+            height: 230px;
+            top: 0px;
+            left: 32px;
+          }     
+        }
+        &:hover,
+        &:focus {
+          z-index: 10;
+          transform: scale(1.1);
+          &::before {
+            opacity: 1;
+          }
+          & + .feature-tooltip {
+            display: inline-block;
+          }
+        }
+      }
+      img {
+        position: relative;
+        filter: hue-rotate(195deg);
+      }
+      .feature-tooltip {
+        display: none;
+        padding: 30px;
+        border-radius: 5px;
+        white-space: normal;
+        z-index: 30;
+        max-width: 70%;
+        left: 15%;
+        top: 10%;
+        transition: opacity 0.2s;
+        position: absolute;
+        opacity: 0.95;
+        text-align: left;
+        @media screen and (min-width:1200px) {
+          min-width: 320px;
+          max-width: 350px;
+        }
+        h3 {
+          font-size: 2rem;
+          width: auto;
+          max-width: initial;
+          text-transform: none;
+          color: $white;
+          margin: 0 0 15px;
+          text-align: left;
+        }
+        h4 {
+          color: $text;
+          text-transform: uppercase;
+          font-size: 1rem;
+          margin-top: 0;
+        }
+        p {
+          font-size: 1.5rem;
+          color: $text;
+          text-align: left;
+          margin-bottom: 0;
+        }
+        &::before {
+          @media screen and (min-width:1200px) {
+            content: "";
+            width: 20px;
+            height: 20px;
+            border-style: solid;
+            border-width: 10px;
+            top: 80px;
+            position: absolute;
+          }
+        }
+        &.left {
+          @media screen and (min-width:1200px) {
+            left: -104%;
+          }
+          &::before {
+            border-color: transparent transparent transparent $gray;
+              right: -20px;
+          }
+        }
+        &.right {
+          @media screen and (min-width:1200px) {
+            left: 83%;    
+          }
+          &:before {
+            border-color: transparent $gray transparent transparent;
+              left: -20px;
+          }
+        }
+        &.tooltip-offset {
+          margin-top: 80px;
+        }
+      }
+    }
+  }
+  .feature {
+    padding-top: 70px;
+    padding-bottom: 100px;
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    h3 {
+      font-weight: 600;
+      text-align: center;
+      margin: 10px auto;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      max-width: 130px;
+      white-space: normal;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .button {
+      cursor: default;
+      &:hover {
+        transform: none;
+      }
+    }
+    @media screen and (min-width:768px) {
+      padding-top: 60px;
+    }
+  }
+
+  .stats {
+    padding: 50px 0;
+    background-color: $white;
+    .stat-block {
+      text-align: center;
+      margin: 7% 0 15%;
+    }
+    h2 {
+      font-size: 4rem;
+      color: $primary;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    h3 {
+      text-transform: uppercase;
+      margin-top: 0;
+      font-size: 2.4rem;
+    }
+    h5 {
+      font-size: 1.8rem;
+      letter-spacing: 0.05rem;
+      opacity: 0.7;
+      font-weight: 400;
+    }
+    @media screen and (min-width:768px) {
+      display: flex;
+      justify-content: center;
+      .stat-block {
+        margin: 0 5%;
+      }
+      h2 {
+        font-size: 6.3rem;
+      }
+    }
+  }
+
+  .pricing {
+    background-color: $white;
+    padding: 50px 0;
+    .price-options {
+      margin: 30px auto 50px;
+      text-align: center;
+      .col {
+        border: 1px solid $gray;
+        margin: 10px;
+        padding: 20px 0;
+      }
+      h5 {
+        text-transform: uppercase;
+        margin-bottom: 0;
+        opacity: 0.9;
+      }
+      h4 {
+        margin: 0;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+      h3 {
+        color: $primary;
+        font-weight: 400;
+        .amount {
+          font-size: 2.3rem;
+        } 
+        .per-year {
+          font-size: 1.4rem;
+          margin-left: 5px;
+        }
+      }
+      .individual {
+        h4 {
+          font-size: 1.8rem;
+          margin: 30px auto 50px;
+        }
+      }
+    }
+    .cta {
+      text-align: center;
+      p {
+        font-size: 2rem;
+      }
+      .btn {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .why-use {
+    padding: 30px 0;
+    h2 {
+      text-align: left;
+      margin-top: 50px;
+    }
+    ul {
+      padding-left: 0;
+    }
+    li {
+      line-height: 1.6;
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+    p {
+      margin-bottom: 40px !important;
+    }
+    .img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-image: url(/client/img/library.jpg);
+      background-size: cover;
+      background-position: center center;
+    }
+    .badge {
+      margin-top: 10px;
+      background-color: $white;
+      padding: 0;
+      border-radius: 0;
+    }
+  }
+
+
+  #testimonials {
+    background-image: url(../img/masthead-front.jpg);
+    background-size: cover;
+    text-align: center;
+    padding: 60px 0;
+    .testimonials {
+      margin: 50px 0;
+    }
+    h2, blockquote, cite {
+      color: #fff;
+    }
+    blockquote {
+      padding: 10px 40px;
+      margin-bottom: 10px;
+      border: 0;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 1.8rem;
+    }
+    cite {
+      display: block;
+      font-style: normal;
+      text-align: center;
+    }
+    .row > div {
+      padding: 0 20px !important;
+    }
+    .author {
+      font-weight: 600;
+      font-size: 1.9rem;
+    }
+    .position {
+      font-weight: 400;
+      font-size: 1.4rem;
+      opacity: 0.8;
+      margin-bottom: 15px;
+      letter-spacing: 0.05rem;
+      text-transform: uppercase;
+    }
+    .logo {
+      max-width: 110px;
+      max-height: 30px;
+      margin: 0 auto;
+    }
+    .testimonials-container {
+      margin: 50px 0 40px;
+      background-size: 45px;
+    }
+    .carousel-inner {
+      min-height: 320px;
+      ul[rn-carousel] {
+        height: 320px;
+      }
+    }
+    footer {
+      padding-top: 20px;
+      position: relative;
+      &::before {
+        content: '';
+          width: 50px;
+          height: 1px;
+          background-color: #fff;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -25px;
+          opacity: 0.5;
+      }
+    }
+    @media screen and (min-width:768px) {
+      blockquote {
+        font-size: 2.2rem;
+      }
+    }
+    .carousel-indicators {
+      width: 100%;
+      left: 0;
+      margin-left: 0;
+      bottom: -10px;
+      li {
+        display: inline-block;
+        list-style-type: none;
+        width: 60px;
+        height: 60px;
+        padding-top: 4px;
+        cursor: pointer;
+        border-radius: 50%;
+        text-indent: 0;
+        border: none;
+        img {
+          filter: grayscale(100%);
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+        &.active {
+          border: 1px solid rgba(255,255,255,0.6);
+          background-color: transparent;
+          img {
+            filter: grayscale(0);
+          }
+        }
+      }
+      @media screen and (min-width:768px) {
+        width: 60%;
+        left: 50%;
+        margin-left: -30%;
+        li {
+          width: 80px;
+          height: 80px;
+          & + li {
+            margin-left: 10px;
+          }
+          img {
+            width: 70px;
+            height: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+    }
+    .flex-row .col {
+      flex: 1;
+    }
+  }
+
+}
