@@ -22,6 +22,26 @@ p, li {
   }
 }
 
+.home {
+  
+  header.edumodo-header-1.transparent-active div#edumodo-mainnav {
+    top: 25px;
+  }
+  .login-button {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    text-align: right;
+    z-index: 10;
+    .btn {
+      margin: 0;
+      color: $white;
+    }
+  }
+
+}
+
 .tutor-essentials {
 
   h2 {
@@ -34,13 +54,14 @@ p, li {
     padding-bottom: 50px;
   }
 
+
   .masthead {
     display: flex;
     align-items: center;
     min-height: auto !important;
     background-image: url(../img/masthead-front.jpg);
-    height: 80vh;
-    h1, h5, p, a {
+    height: 100vh;
+    h1, h5, p, a, span {
       color: $white;
     }
     h1 {
@@ -54,14 +75,26 @@ p, li {
         text-decoration: underline !important;
       }
     }
+    .buttons {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 40px;
+      .btn {
+        margin: 0;
+      }
+      span {
+        margin: 10px 30px;
+      }
+    }
     .button-subtext {
       letter-spacing: 0;
-      margin-top: 0;
+      margin-top: 10px;
       font-size: 1.35rem !important;
       opacity: 0.8;
       font-weight: 300;
     }
     @media screen and (min-width:768px) {
+      height: 80vh;
       h1 {
         font-size: 5rem !important;
       }
@@ -316,7 +349,7 @@ p, li {
   }
 
   .stats {
-    padding: 50px 0;
+    padding: 70px 0;
     background-color: $white;
     .stat-block {
       text-align: center;

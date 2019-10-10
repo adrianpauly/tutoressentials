@@ -8,6 +8,20 @@ p, li {
   .container {
     width: 1300px; } }
 
+.home header.edumodo-header-1.transparent-active div#edumodo-mainnav {
+  top: 25px; }
+
+.home .login-button {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  text-align: right;
+  z-index: 10; }
+  .home .login-button .btn {
+    margin: 0;
+    color: #fefefe; }
+
 .tutor-essentials h2 {
   text-align: center;
   margin: 20px 0 40px;
@@ -26,8 +40,8 @@ p, li {
   align-items: center;
   min-height: auto !important;
   background-image: url(../img/masthead-front.jpg);
-  height: 80vh; }
-  .tutor-essentials .masthead h1, .tutor-essentials .masthead h5, .tutor-essentials .masthead p, .tutor-essentials .masthead a {
+  height: 100vh; }
+  .tutor-essentials .masthead h1, .tutor-essentials .masthead h5, .tutor-essentials .masthead p, .tutor-essentials .masthead a, .tutor-essentials .masthead span {
     color: #fefefe; }
   .tutor-essentials .masthead h1 {
     margin-top: 0;
@@ -37,18 +51,32 @@ p, li {
     opacity: 0.9; }
     .tutor-essentials .masthead p a {
       text-decoration: underline !important; }
+  .tutor-essentials .masthead .buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-top: 40px; }
+    .tutor-essentials .masthead .buttons .btn {
+      margin: 0; }
+    .tutor-essentials .masthead .buttons span {
+      margin: 10px 30px; }
   .tutor-essentials .masthead .button-subtext {
     letter-spacing: 0;
-    margin-top: 0;
+    margin-top: 10px;
     font-size: 1.35rem !important;
     opacity: 0.8;
     font-weight: 300; }
   @media screen and (min-width: 768px) {
-    .tutor-essentials .masthead h1 {
-      font-size: 5rem !important; }
-    .tutor-essentials .masthead .masthead-content {
-      margin-top: 50px !important;
-      width: 60%; } }
+    .tutor-essentials .masthead {
+      height: 80vh; }
+      .tutor-essentials .masthead h1 {
+        font-size: 5rem !important; }
+      .tutor-essentials .masthead .masthead-content {
+        margin-top: 50px !important;
+        width: 60%; } }
 
 .tutor-essentials .description {
   background-color: white; }
@@ -264,7 +292,7 @@ p, li {
       padding-top: 60px; } }
 
 .tutor-essentials .stats {
-  padding: 50px 0;
+  padding: 70px 0;
   background-color: #fefefe; }
   .tutor-essentials .stats .stat-block {
     text-align: center;

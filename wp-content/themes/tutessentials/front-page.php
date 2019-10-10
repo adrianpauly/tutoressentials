@@ -9,16 +9,27 @@
 get_header(); ?>
 
 <section class="masthead-page tutor-essentials">
+  
+  <div class="login-button">
+    <div class="container">
+      <a href="https://tutormatchingservice.com/#/tutor-essentials" class="btn login">Log in</a>
+    </div>
+  </div>
 
     <section class="masthead container-fluid">
     	<div class="container">
 	        <div class="masthead-content">
 	            <h1>Easily train all your tutors in a self-paced, online environment.</h1>
 	            <p>Tutor Essentials is the only web-based tutor training course endorsed by <a href="https://www.crla.net/" target="_blank">CRLA</a> (College Reading and Learning Association).</p>
-	            <div class="cta">
-	                <a href="https://tutormatchingservice.com/#/schools-contact/training-demo/" class="btn btn-alt">Give it a try!</a>
-	                <h5 class="button-subtext">No credit card, no obligations</h5>
-	            </div>
+              <div class="buttons">
+                <a href="https://tutormatchingservice.com/#/tutor-essentials" class="btn login">Log in</a>
+                <span>or</span>
+  	            <div class="cta">
+  	                <a href="https://tutormatchingservice.com/#/schools-contact/training-demo/" class="btn btn-alt">Give it a try!</a>
+  	                <h5 class="button-subtext">No credit card, no obligations</h5>
+  	            </div>
+                
+              </div>
 	        </div>    		
     	</div>
     </section>
