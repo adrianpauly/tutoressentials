@@ -137,7 +137,7 @@ $course_page_path = '?sfwd-courses=tutor-essentials-course';
 $non_redirect_urls = array('wp-admin','wp-login','auth','wp-json');
 $redirect = true;
 
-if(is_front_page()) {
+if( $path = '/' ) {
     $redirect = false;
 } else {
     foreach($non_redirect_urls as $url) {
