@@ -32,10 +32,12 @@
 # mu-plugins, plugins, and themes directories
 wp-content/*
 !wp-content/themes/
+!wp-content/plugins/
 
 # ignore all mu-plugins, plugins, and themes
 # unless explicitly whitelisted at the end of this file
 wp-content/themes/*
+wp-content/plugins/*
 
 # ignore all files starting with . or ~
 .*
@@ -103,3 +105,4 @@ sftp-config.json
 # track these mu-plugins, plugins, and themes
 # add your own entries here
 !wp-content/themes/tutessentials
+!wp-content/plugins/learndash-lock-passed-quizzes
