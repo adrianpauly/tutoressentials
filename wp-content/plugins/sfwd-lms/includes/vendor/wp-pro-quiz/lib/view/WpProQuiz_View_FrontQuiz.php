@@ -11,6 +11,39 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 	private $_assessmetTemp = array();
 
 
+	// Added by Wear
+	private function isQuizPassed() {
+
+		global $wpdb;
+
+		$quiz_id = $this->quiz->getId();
+		$quiz_post_id = $this->quiz->getPostId();
+		$user = get_current_user_id();
+
+		$query = "
+			SELECT a.activity_status, a.activity_completed
+		    FROM wp_learndash_user_activity AS a
+		    INNER JOIN wp_users AS u ON a.user_id = u.ID
+			WHERE a.activity_type = 'quiz'
+			AND u.ID = $user
+			AND a.post_id = $quiz_post_id";
+
+    	$db_response = $wpdb->get_results($query);
+
+    	$progress = learndash_get_course_progress($user, $quiz_post_id, 6);
+
+    	$result = false;
+
+    	foreach($db_response as $response) {
+    		if($response->activity_status == 1) {
+				$result = array('passed' => true, 'date' => $response->activity_completed );
+    		}
+    	}
+
+		return $result;
+	}
+
+
 	private function getFreeCorrect( $data ) {
 
 		$t = str_replace( "\r\n", "\n", strtolower( $data->getAnswer() ) );
@@ -858,27 +891,55 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 	private function showStartQuizBox() {
 		?>
 		<div class="wpProQuiz_text">
+ 
+			<?php  
 
-			<?php
-			if ( $this->quiz->isFormActivated() && $this->quiz->getFormShowPosition() == WpProQuiz_Model_Quiz::QUIZ_FORM_POSITION_START ) {
+			$passed = $this->isQuizPassed(); 
+
+			if ( $passed['passed'] && $this->quiz->isFormActivated() && $this->quiz->getFormShowPosition() == WpProQuiz_Model_Quiz::QUIZ_FORM_POSITION_START ) {
 				$this->showFormBox();
 			}
 			?>
 
-			<div>
-				<input class="wpProQuiz_button" type="button" value="<?php
-				//echo sprintf( esc_html_x( 'Start %s', 'Start Quiz Button Label', 'learndash' ), LearnDash_Custom_Label::get_label( 'quiz' ) );
-				echo esc_html( SFWD_LMS::get_template(
-					'learndash_quiz_messages',
-					array(
-						'quiz_post_id'	=>	$this->quiz->getID(),
-						'context' 		=> 	'quiz_start_button_label',
-						'message' 		=> 	sprintf( esc_html_x( 'Start %s', 'Start Quiz Button Label', 'learndash' ), LearnDash_Custom_Label::get_label( 'quiz' ) )
-					)
-				));
-				?>"
-				       name="startQuiz">
-			</div>
+			<?php if ( $passed['passed'] ) : ?>
+
+				<div class="wpProQuiz_lock">
+
+					<?php
+
+						$passed_date = date('F j, Y', $passed['date']);
+
+						echo SFWD_LMS::get_template(
+							'learndash_quiz_messages',
+							array(
+								'quiz_post_id'	=>	$this->quiz->getID(),
+								'context' 		=> 	'quiz_passed_message',
+								'message' 		=> 	'<p>'. esc_html__( "You passed this quiz on: " . $passed_date , 'learndash' ) .'</p>'
+							)
+						);
+					?>
+
+				</div>
+
+			<?php else : ?>	
+
+				<div>
+					<input class="wpProQuiz_button" type="button" value="<?php
+					//echo sprintf( esc_html_x( 'Start %s', 'Start Quiz Button Label', 'learndash' ), LearnDash_Custom_Label::get_label( 'quiz' ) );
+					echo esc_html( SFWD_LMS::get_template(
+						'learndash_quiz_messages',
+						array(
+							'quiz_post_id'	=>	$this->quiz->getID(),
+							'context' 		=> 	'quiz_start_button_label',
+							'message' 		=> 	sprintf( esc_html_x( 'Start %s', 'Start Quiz Button Label', 'learndash' ), LearnDash_Custom_Label::get_label( 'quiz' ) )
+						)
+					));
+					?>"
+					       name="startQuiz">
+				</div>
+
+			<?php endif; ?>
+
 		</div>
 		<?php
 	}
