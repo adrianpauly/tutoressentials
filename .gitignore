@@ -105,4 +105,4 @@ sftp-config.json
 # track these mu-plugins, plugins, and themes
 # add your own entries here
 !wp-content/themes/tutessentials
-!wp-content/plugins/learndash-lock-passed-quizzes
+!wp-content/plugins/sfwd-lms
