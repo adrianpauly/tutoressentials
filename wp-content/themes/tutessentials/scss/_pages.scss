@@ -1,0 +1,66 @@
+// INTERNAL PAGES
+
+
+// Press page
+
+.press-photos, .press-logos {
+	.blocks-gallery-item {
+		margin-bottom: 40px;
+		figure {
+			justify-content: center;
+		}
+		figcaption {
+			display: block;
+		    background: transparent;
+		    color: $primary;
+		    z-index: 0;
+		}
+		img {
+			max-height: 300px;
+			transition: 0.1s all;
+		}
+		a {
+			padding-bottom: 40px;
+			&:hover {
+				img {
+					transform: scale(1.05);
+				}
+			}
+		}
+		.wp-image-25870 { 	// phone
+			max-height: 400px;
+		}
+	}
+}
+
+.press-logos {
+	a {
+		margin: 10px;
+	    border: 1px solid #ccc;
+	    padding: 40px 80px !important;
+	    object-fit: initial;
+	    img {
+	    	transition: all 0.15s;
+	    }
+	    &:hover {
+	    	img {
+	    		transform: scale(1.075);
+	    	}
+	    }
+	}	
+	figcaption {
+		display: none !important;
+	}
+	.blocks-gallery-item {
+		&:first-child {
+			a {
+				background-color: #999;
+			}
+		}
+		&:last-child {
+			a {
+				background-color: #fafafa;
+			}
+		}
+	}
+}
