@@ -9,7 +9,9 @@ function additional_scripts() {
     }
 
     // Custom scripts + styles
+    wp_enqueue_script('foundation-js', get_stylesheet_directory_uri() . '/js/vendor/foundation.js', array('jquery'), EDUMODO_VERSION, true);
     wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), EDUMODO_VERSION, true);
+    wp_enqueue_style('foundation-css', get_stylesheet_directory_uri() . '/css/foundation.min.css', array(), EDUMODO_VERSION, 'all');
     wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Nunito+Sans:300,400,700&display=swap', array(), EDUMODO_VERSION, 'all');
     wp_enqueue_style('custom-styles', get_stylesheet_directory_uri() . '/css/custom.css', array(), EDUMODO_VERSION, 'all');
 }
@@ -37,10 +39,38 @@ if(!current_user_can('administrator')) {
     show_admin_bar(false);
 }
 
- 
+
+// Get via cURL
+function get_curl($endpoint) {
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => $endpoint,
+        CURLOPT_RETURNTRANSFER => 1
+    ));
+
+    $curl_result = curl_exec($curl);
+
+    if($curl_result === false ) throw new Exception(curl_error($curl), curl_errno($curl));
+    
+    curl_close($curl);
+
+    return $curl_result;
+}
+
+
+
+
+// Get privacy pages content from AN
+function get_privacy($endpoint) {
+    $curl_result = get_curl($endpoint);
+    return json_decode($curl_result);
+}
+
 
 // Include TMS authentication functions
 include('functions-tms-auth.php');
 
 // Include REST API functions
-include('functions-rest-api.php');
+include('functions-rest-api-v1-3.php');

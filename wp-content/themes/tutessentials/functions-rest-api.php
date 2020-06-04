@@ -258,7 +258,7 @@ function get_tutor_philosophy($email) {
     SELECT p.ID as post_id, p.post_status, p.post_content
     FROM wp_posts AS p
     INNER JOIN wp_users AS u ON p.post_author = u.ID
-    WHERE p.ID IN (SELECT m.post_id FROM wp_postmeta AS m WHERE m.meta_key = 'question_id' AND m.meta_value = 78)
+    WHERE p.ID IN (SELECT m.post_id FROM wp_postmeta AS m WHERE m.meta_key = 'question_id' AND m.meta_value = 134)
     AND u.user_email = '$email'
     AND p.post_status <> 'trash'
     ";
@@ -290,7 +290,7 @@ function get_tutor_philosophies() {
     SELECT p.ID as 'post_id', p.post_status, u.user_email
     FROM `wp_posts` AS p, `wp_users` AS u, `wp_postmeta` AS m 
     WHERE p.post_type = 'sfwd-essays'
-    AND p.ID IN (SELECT m.post_id FROM `wp_postmeta` WHERE m.meta_key = 'question_id' AND m.meta_value = 78)
+    AND p.ID IN (SELECT m.post_id FROM `wp_postmeta` WHERE m.meta_key = 'question_id' AND m.meta_value = 134)
     AND p.post_author = u.ID
     AND p.post_status <> 'trash'";
     
@@ -305,7 +305,7 @@ function get_tutor_philosophies() {
 
 // wp-json paths or any custom endpoints 
 $regex_json_path_patterns = array(
-  '#^/wp-json/wp/v2?#',
+  '#^/wp-json/wp/v1?#',
   '#^/wp-json/?#'
 );
 
