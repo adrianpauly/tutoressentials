@@ -17,7 +17,7 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'page' );
 
 
-						$data = 'nina.mulkey@gmail.com';
+						$data = 'nina.mulkey%40gmail.com';
 						
 						$apiresult = get_tutor_philosophy($data);
 

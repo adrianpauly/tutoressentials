@@ -7,3 +7,26 @@ Version: 1.0.0
 Text Domain: tutessentials
 */
 
+.navbar-header {
+	width: 100%;
+}
+
+.navbar-header img {
+	max-width: 100%;
+}
+
+#primary .lp-course3-heading:before {
+	background-color: transparent !important;
+}
+
+.lp-course3-heading .lp-title {
+	font-size: 42px;
+}
+
+#footer-middle {
+	display: none;
+}
+
+#wpProQuiz_2 .wpProQuiz_certificate {
+	display: none !important;
+}
