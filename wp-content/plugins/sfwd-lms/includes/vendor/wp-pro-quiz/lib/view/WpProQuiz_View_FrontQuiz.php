@@ -1518,6 +1518,16 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 						<div class="wpProQuiz_question" style="margin: 10px 0px 0px 0px;">
 							<div class="wpProQuiz_question_text">
 								<?php
+
+									// Get min word count
+									$qid = $question->getQuestionPostId();
+									$qmeta = get_post_meta($qid);
+
+									if($qmeta['min_word_count']) {
+										$min_word_count = $qmeta['min_word_count'];
+										echo '<div class="min-word-count-value" style="display:none">' . $min_word_count[0] . '</div>';
+									}
+
 									$questionText = $question->getQuestion();
 									$questionText =	sanitize_post_field( 'post_content', $questionText, 0, 'display' );
 									//$questionText = wp_unslash( $questionText );
@@ -1526,6 +1536,8 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 
 									echo $questionText;
 								?>
+							</div>
+							<div class="kustom">
 							</div>
 							<p class="wpProQuiz_clear" style="clear:both;"></p>
 

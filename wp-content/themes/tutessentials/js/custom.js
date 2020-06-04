@@ -41,38 +41,46 @@
     // Word count
 
     const $field = $('textarea.wpProQuiz_questionEssay');
-    let min = 3;
+    let min;
 
+    if ($('.min-word-count-value').length) {
+        min = $('.min-word-count-value').text();
+    } 
 
-    $field.after('<div class="character-count"><span>0</span> / ' + min + ' minimum word count</div>')
+    console.log({min});
 
-	$('[name="startQuiz"]').on('click',function(){
-		$('.wpProQuiz_button').addClass('disabled');
-	});
+    if(min) {
 
-    $field.on('keyup',function(e){
+        $field.after('<div class="character-count"><span>0</span> / ' + min + ' minimum word count</div>')
 
-    	// Count words
-    	var wordSplit = $(this).val().split(/\s+/);
-    	var wordCount = 0;
-
-    	// but skip spaces
-    	wordSplit.forEach((el)=>{
-    		if (el !== "") wordCount++;
+    	$('[name="startQuiz"]').on('click',function(){
+    		$('.wpProQuiz_button').addClass('disabled');
     	});
 
-    	$('.character-count span').text(wordCount);
+        $field.on('keyup',function(e){
 
-    	if(wordCount >= min) {
-    		$('.character-count').addClass('good');
-			$('.wpProQuiz_button').removeClass('disabled');
-    	} else {
-			$('.wpProQuiz_button').addClass('disabled');
-    		$('.character-count').removeClass('good');
-    	}
+        	// Count words
+        	var wordSplit = $(this).val().split(/\s+/);
+        	var wordCount = 0;
 
-    });
+        	// but skip spaces
+        	wordSplit.forEach((el)=>{
+        		if (el !== "") wordCount++;
+        	});
 
+        	$('.character-count span').text(wordCount);
+
+        	if(wordCount >= min) {
+        		$('.character-count').addClass('good');
+    			$('.wpProQuiz_button').removeClass('disabled');
+        	} else {
+    			$('.wpProQuiz_button').addClass('disabled');
+        		$('.character-count').removeClass('good');
+        	}
+
+        });
+
+    }
 
 
 
