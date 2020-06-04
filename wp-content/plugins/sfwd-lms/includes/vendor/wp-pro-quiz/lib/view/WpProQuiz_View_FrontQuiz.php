@@ -9,7 +9,6 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 
 	private $_clozeTemp = array();
 	private $_assessmetTemp = array();
-	private $_passedMessage = false;
 
 
 	// Added by Wear
@@ -64,7 +63,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 				unset( $t[$idx] );
 			}
 		}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
 		return array_values( $t );
 	}
 
@@ -902,7 +901,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 			}
 			?>
 
-			<?php if ( $passed['passed'] && !$this->_passedMessage ) :  // If quiz was passed and message has not been shown ?>
+			<?php if ( $passed['passed'] ) : ?>
 
 				<div class="wpProQuiz_lock">
 
@@ -921,8 +920,6 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 					?>
 
 				</div>
-
-				<?php $this->_passedMessage = true ?>
 
 			<?php else : ?>	
 
@@ -1378,37 +1375,8 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 		$globalPoints = 0;
 		$json         = array();
 		$catPoints    = array();
-
-		$passed = $this->isQuizPassed(); ?>
-
-
+		?>
 		<div style="display: none;" class="wpProQuiz_quiz">
-
-		<?php if ( $passed['passed'] ) :  // If quiz was passed  ?>
-
-			<div class="wpProQuiz_lock">
-
-				<?php
-
-					$passed_date = date('F j, Y', $passed['date']);
-
-					echo SFWD_LMS::get_template(
-						'learndash_quiz_messages',
-						array(
-							'quiz_post_id'	=>	$this->quiz->getID(),
-							'context' 		=> 	'quiz_passed_message',
-							'message' 		=> 	'<p>'. esc_html__( "You passed this quiz on: " . $passed_date , 'learndash' ) .'</p>'
-						)
-					);
-				?>
-
-			</div>
-
-			<?php $this->_passedMessage = true ?>
-
-		<?php else : ?>	
-
-
 			<ol class="wpProQuiz_list">
 				<?php
 				$index = 0;
@@ -1518,16 +1486,6 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 						<div class="wpProQuiz_question" style="margin: 10px 0px 0px 0px;">
 							<div class="wpProQuiz_question_text">
 								<?php
-
-									// Get min word count
-									$qid = $question->getQuestionPostId();
-									$qmeta = get_post_meta($qid);
-
-									if($qmeta['min_word_count']) {
-										$min_word_count = $qmeta['min_word_count'];
-										echo '<div class="min-word-count-value" style="display:none">' . $min_word_count[0] . '</div>';
-									}
-
 									$questionText = $question->getQuestion();
 									$questionText =	sanitize_post_field( 'post_content', $questionText, 0, 'display' );
 									//$questionText = wp_unslash( $questionText );
@@ -1536,8 +1494,6 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 
 									echo $questionText;
 								?>
-							</div>
-							<div class="kustom">
 							</div>
 							<p class="wpProQuiz_clear" style="clear:both;"></p>
 
@@ -2079,11 +2035,7 @@ class WpProQuiz_View_FrontQuiz extends WpProQuiz_View_View {
 					<div style="clear: both;"></div>
 				</div>
 			<?php } ?>
-
-			<?php endif; ?>
-
 		</div>
-
 		<?php
 		if ( empty( $globalPoints ) ) {
 			$globalPoints = 1;
