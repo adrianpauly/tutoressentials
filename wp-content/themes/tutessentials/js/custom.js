@@ -92,4 +92,15 @@
     }
 
 
-})(jQuery);
+    // Hack to hide completed quiz questions -- sorry, Learndash is finnicky ¯\_(ツ)_/¯ 
+    if ( $('wpProQuiz_lock').text().indexOf('You passed this quiz') ) {
+        $('.wpProQuiz_list').hide();
+        setTimeout(function(){
+        $('.wpProQuiz_text').show();
+            console.log('time has passed me by');
+        },1000)
+    }
+
+
+
+})(jQuery); 
