@@ -47,9 +47,9 @@
         min = $('.min-word-count-value').text();
     } 
 
-    console.log({min});
+    console.log('min', min);
 
-    if(min) {
+    if(min && min > 0) {
 
         $field.after('<div class="character-count"><span>0</span> / ' + min + ' minimum word count</div>')
 
