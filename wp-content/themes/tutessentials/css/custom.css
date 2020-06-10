@@ -624,3 +624,18 @@ body {
 
 .social-share {
   display: none; }
+
+.button-to-link {
+  padding: 0 !important;
+  background-color: transparent !important;
+  color: #333 !important;
+  border: none !important;
+  font-weight: 300 !important;
+  position: absolute !important;
+  right: 50px !important;
+  margin-top: 40px !important;
+  -webkit-transition: 0.2s !important;
+  -o-transition: 0.2s !important;
+  transition: 0.2s !important; }
+  .button-to-link:hover {
+    color: #ecb101 !important; }

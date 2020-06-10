@@ -84,4 +84,12 @@
 
 
 
+    // Hack to remove Mark Complete button 
+
+    if ( $('#sfwd-mark-complete').length && $('.next-link').length ) {
+        $('.next-link').remove();
+        $('#learndash_mark_complete_button').addClass('button-to-link').attr('value', 'Next Lesson →');
+    }
+
+
 })(jQuery);
