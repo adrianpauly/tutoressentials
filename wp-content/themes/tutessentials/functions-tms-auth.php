@@ -36,13 +36,16 @@ function callAPI($method, $url, $data = false) {
 function set_user($auth_object) {
 
     // External user exists, try to load the user info from the WordPress user table
-    $user = get_user_by('email', $auth_object->email);
+    $user = get_user_by('login', $auth_object->username);
 
     // User doesn't currently exist in the WordPress database, create it
     // Otherwise the object is already loaded, continue log in
+
+    // ** authenticate by user_login instead of user_email
+
     if(!$user) {
         $userdata = array('user_email'=>$auth_object->email,
-                          'user_login'=>$auth_object->email,
+                          'user_login'=>$auth_object->username,
                           'first_name'=>$auth_object->first_name,
                           'last_name'=>$auth_object->last_name
                           );
