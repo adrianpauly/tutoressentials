@@ -54,7 +54,7 @@
         $field.after('<div class="character-count"><span>0</span> / ' + min + ' minimum word count</div>')
 
     	$('[name="startQuiz"]').on('click',function(){
-    		$('.wpProQuiz_button').addClass('disabled');
+    		//$('.wpProQuiz_button').addClass('disabled');
     	});
 
         $field.on('keyup',function(e){
@@ -93,11 +93,10 @@
 
 
     // Hack to hide completed quiz questions -- sorry, Learndash is finnicky ¯\_(ツ)_/¯ 
-    if ( $('wpProQuiz_lock').text().indexOf('You passed this quiz') ) {
+    if ( $('.wpProQuiz_lock').text().indexOf('You passed this quiz') > -1 ) {
         $('.wpProQuiz_list').hide();
         setTimeout(function(){
-        $('.wpProQuiz_text').show();
-            console.log('time has passed me by');
+            $('.wpProQuiz_text').show();
         },1000)
     }
 
