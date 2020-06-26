@@ -105,4 +105,6 @@ sftp-config.json
 # track these mu-plugins, plugins, and themes
 # add your own entries here
 !wp-content/themes/tutessentials
-!wp-content/plugins/sfwd-lms
+!wp-content/plugins/tutoressentials-sso
+
+!wp-content/plugins/sfwd-lms/
