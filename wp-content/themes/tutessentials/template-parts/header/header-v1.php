@@ -27,7 +27,7 @@
 
     <header class="edumodo-header-1 <?php if ($enable_sticky_active == true) : echo 'sticky-active'; endif; ?> <?php if ($enable_transparent_active == true and is_front_page()) : echo 'transparent-active'; endif; ?>">
 
-        <div id="edumodo-mainnav" class="navbar-v1 edumodo-mainnav">
+        <div id="edumodo-mainnav" class="navbar-v1 edumodo-mainnav mainnav">
             <div class="container">
                 <div class="row">
                     <div class="nav-logo-align">
@@ -37,17 +37,17 @@
                             <div class="logo-wrapper">
                                 <?php 
     
-                                    if ($edumodo_logo or $edumodo_logo_2) : ?>
+                                if ($edumodo_logo or $edumodo_logo_2) : ?>
+                                    <?php if(is_front_page()) : ?>
                                         <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-                                            <?php 
-                                                if(has_custom_logo()) :
-                                                    the_custom_logo();
-                                                endif; 
-                                            ?>
+                                    <?php else : ?>
+                                        <a class="logo" href="/courses/study-essentials-course/" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+                                    <?php endif; ?>
+                                            <?php  if( has_custom_logo() ) the_custom_logo(); ?>
                                             <img class="logo-transparent" src="<?php echo esc_url($edumodo_logo_2); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                                             <img class="logo-default" src="<?php echo esc_url($edumodo_logo); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                                         </a>
-                                    <?php else : ?>
+                                <?php else : ?>
                                     <h2 class="site-title">
                                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                             <?php bloginfo( 'name' ); ?>
