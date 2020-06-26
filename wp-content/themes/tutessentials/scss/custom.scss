@@ -120,8 +120,9 @@ body {
 .wpProQuiz_button {
 	&.disabled {
 		background-color: #ccc;
-		border: none;
+		border-color: #ccc;
 		pointer-events: none;
+		border-style: solid;
 	}
 }
 

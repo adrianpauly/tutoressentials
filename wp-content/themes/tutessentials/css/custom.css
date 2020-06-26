@@ -619,8 +619,9 @@ body {
 
 .wpProQuiz_button.disabled {
   background-color: #ccc;
-  border: none;
-  pointer-events: none; }
+  border-color: #ccc;
+  pointer-events: none;
+  border-style: solid; }
 
 .social-share {
   display: none; }
