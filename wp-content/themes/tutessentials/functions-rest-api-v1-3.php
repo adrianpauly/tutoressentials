@@ -255,7 +255,7 @@ function get_tutor_philosophy($email) {
     SELECT p.ID as post_id, p.post_status, p.post_content
     FROM wp_posts AS p
     INNER JOIN wp_users AS u ON p.post_author = u.ID
-    WHERE p.ID IN (SELECT m.post_id FROM wp_postmeta AS m WHERE m.meta_key = 'question_id' AND m.meta_value = 134)
+    WHERE p.ID IN (SELECT m.post_id FROM wp_postmeta AS m WHERE m.meta_key = 'question_id' AND (m.meta_value = 134 OR m.meta_value = 143))
     AND u.user_email = '$email'
     AND p.post_status <> 'trash'
     ";
