@@ -250,12 +250,24 @@ function get_tutor_philosophy($email) {
 
     global $wpdb;
 
+    $philosophy_question_ids = array('134','143','146','147','149');
+    $question_id_count = count($philosophy_question_ids);
+    $i = 0;
+    $philosophy_question_string = '';
+    foreach($philosophy_question_ids as $qid) {
+        $philosophy_question_string .= 'm.meta_value = ' . $qid;
+        $i++;
+        if($i < $question_id_count) {
+            $philosophy_question_string .=  ' OR ';
+        }
+    }
+
     // Get tutor philosophy for specified email
     $get_tutor_philosophy_query = "
     SELECT p.ID as post_id, p.post_status, p.post_content
     FROM wp_posts AS p
     INNER JOIN wp_users AS u ON p.post_author = u.ID
-    WHERE p.ID IN (SELECT m.post_id FROM wp_postmeta AS m WHERE m.meta_key = 'question_id' AND (m.meta_value = 134 OR m.meta_value = 143))
+    WHERE p.ID IN (SELECT m.post_id FROM wp_postmeta AS m WHERE m.meta_key = 'question_id' AND ($philosophy_question_string))
     AND u.user_email = '$email'
     AND p.post_status <> 'trash'
     ";
