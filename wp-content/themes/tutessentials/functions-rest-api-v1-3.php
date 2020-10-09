@@ -250,7 +250,7 @@ function get_tutor_philosophy($email) {
 
     global $wpdb;
 
-    $philosophy_question_ids = array('134','143','146','147','149');
+    $philosophy_question_ids = array('134','143','145','146','147','148','149');
     $question_id_count = count($philosophy_question_ids);
     $i = 0;
     $philosophy_question_string = '';
