@@ -143,7 +143,20 @@ body {
     right: 50px !important;
     margin-top: 40px !important;
     transition: 0.2s !important;
-    &:hover {
+    &:hover { 
     	color: #ecb101 !important;
     }
+}
+
+
+// Assessment question
+
+.wpProQuiz_questionList[data-type="assessment_answer"] {
+	label {
+		display: block;
+		line-height: 2;
+		input {
+			margin-right: 1rem;
+		}
+	}
 }

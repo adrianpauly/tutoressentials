@@ -640,3 +640,9 @@ body {
   transition: 0.2s !important; }
   .button-to-link:hover {
     color: #ecb101 !important; }
+
+.wpProQuiz_questionList[data-type="assessment_answer"] label {
+  display: block;
+  line-height: 2; }
+  .wpProQuiz_questionList[data-type="assessment_answer"] label input {
+    margin-right: 1rem; }
