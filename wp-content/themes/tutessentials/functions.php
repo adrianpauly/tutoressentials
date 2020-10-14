@@ -2,6 +2,9 @@
 
 function additional_scripts() {
 
+    // Load Google font first
+    wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Nunito+Sans:300,400,700&display=swap', array(), EDUMODO_VERSION, 'all');
+
     // Slick slider
     if(is_front_page()) {
         wp_enqueue_style('slick-style', get_stylesheet_directory_uri() . '/slick/slick.css', array(), EDUMODO_VERSION, 'all');
@@ -12,7 +15,6 @@ function additional_scripts() {
     wp_enqueue_script('foundation-js', get_stylesheet_directory_uri() . '/js/vendor/foundation.js', array('jquery'), EDUMODO_VERSION, true);
     wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), EDUMODO_VERSION, true);
     wp_enqueue_style('foundation-css', get_stylesheet_directory_uri() . '/css/foundation.min.css', array(), EDUMODO_VERSION, 'all');
-    wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700|Nunito+Sans:300,400,700&display=swap', array(), EDUMODO_VERSION, 'all');
     wp_enqueue_style('custom-styles', get_stylesheet_directory_uri() . '/css/custom.css', array(), EDUMODO_VERSION, 'all');
 }
 add_action('wp_enqueue_scripts', 'additional_scripts');

@@ -4,7 +4,9 @@ $yes-green: #16a387;
 $no-red: #e75040;
 
 
-
+html, body {
+	font-family: sans-serif;
+}
 
 @import 'front-page';
 @import 'pages';
@@ -26,6 +28,13 @@ body {
 		max-width: 100%;
 	}
 }
+
+
+// FOUC thing
+.btn {
+	font-family: Montserrat, sans-serif !important;
+}
+
 
 #primary {
 	.lp-course3-heading {
